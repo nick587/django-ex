@@ -7,8 +7,6 @@ from . import database
 from .models import PageView
 from django.template.context_processors import request
 
-# Create your views here.
-
 def index(request):
     hostname = os.getenv('HOSTNAME', 'unknown')
     PageView.objects.create(hostname=hostname)
@@ -22,5 +20,5 @@ def index(request):
 def health(request):
     return HttpResponse(PageView.objects.count())
 
-def health(request):
+def helloMessage(request):
     return JsonResponse({"message" : "Ehylà gente!!!!!"})
