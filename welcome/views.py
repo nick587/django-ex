@@ -1,10 +1,11 @@
 import os
 from django.shortcuts import render
 from django.conf import settings
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 from . import database
 from .models import PageView
+from django.template.context_processors import request
 
 # Create your views here.
 
@@ -20,3 +21,6 @@ def index(request):
 
 def health(request):
     return HttpResponse(PageView.objects.count())
+
+def helloMessage(request):
+    return JsonResponse("Ehylà gente!!!!")
