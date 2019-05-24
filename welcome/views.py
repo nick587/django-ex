@@ -22,5 +22,5 @@ def index(request):
 def health(request):
     return HttpResponse(PageView.objects.count())
 
-def helloMessage(request):
+def health(request):
     return JsonResponse({"message" : "Ehylà gente!!!!!"})
