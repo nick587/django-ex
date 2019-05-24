@@ -23,4 +23,4 @@ def health(request):
     return HttpResponse(PageView.objects.count())
 
 def helloMessage(request):
-    return JsonResponse({"message" : "Ehylà gente!!!!"})
+    return JsonResponse({"message" : "Ehylà gente!!!!!"})
