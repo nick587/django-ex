@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'debug_toolbar',
     'welcome',
 ]
 
@@ -76,16 +75,21 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'wsgi.application'
+WSGI_APPLICATION = 'django-ex.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-from . import database
-
 DATABASES = {
-    'default': database.config()
+    'default': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'TCF24',
+        'USER': 'LJML_OWN',
+        'PASSWORD': 'LJML_OWN',
+        'HOST': 'DBTCF24.sede.corp.sanpaoloimi.com',
+        'PORT': '2056',
+    }
 }
 
 
