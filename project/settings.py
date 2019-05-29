@@ -83,14 +83,21 @@ WSGI_APPLICATION = 'django-ex.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'TCF24',
-        'USER': 'LJML_OWN',
-        'PASSWORD': 'LJML_OWN',
-        'HOST': 'DBTCF24.sede.corp.sanpaoloimi.com',
-        'PORT': '2056',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.oracle',
+#         'NAME': 'TCF24',
+#         'USER': 'LJML_OWN',
+#         'PASSWORD': 'LJML_OWN',
+#         'HOST': 'DBTCF24.sede.corp.sanpaoloimi.com',
+#         'PORT': '2056',
+#     }
+# }
 
 
 # Password validation
